@@ -16,7 +16,7 @@ object KafkaProducerApp extends App {
 
   val producer = new KafkaProducer[String, String](props)
   for (i <- 0 until 100) {
-    producer.send(new ProducerRecord[String, String]("my-topic", Integer.toString(i), Integer.toString(i)))
+    producer.send(new ProducerRecord[String, String]("my-topic", Integer.toString(i), "hello"))
     println(i)
   }
 
